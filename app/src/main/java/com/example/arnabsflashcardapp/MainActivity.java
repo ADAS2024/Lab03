@@ -39,8 +39,13 @@ public class MainActivity extends AppCompatActivity {
         ImageView nextbutton = (findViewById(R.id.nextbutton));
 
 
-        flashcardDatabase = new FlashcardDatabase(this);
+        flashcardDatabase = new FlashcardDatabase(getApplicationContext());
         allFlashcards = flashcardDatabase.getAllCards();
+
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            flashcardquestion.setText(allFlashcards.get(allFlashcards.size()-1).getQuestion());
+            flashcardanswer.setText(allFlashcards.get(allFlashcards.size()-1).getAnswer());
+        }
 
         nextbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,11 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 ((TextView) findViewById(R.id.flashcard_question)).setText(flashcard.getQuestion());
             }
         });
-
-        if (allFlashcards != null && allFlashcards.size() > 0) {
-            ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(0).getQuestion());
-            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(0).getAnswer());
-        }
 
         plusbutton.setOnClickListener(new View.OnClickListener() {
             @Override
