@@ -6,7 +6,7 @@
 
 ### App Walk-though
 
-<img src="https://s4.gifyu.com/images/Newcards.gif" width=200><br>
+<img src="https://s4.gifyu.com/images/Lab3.gif" width=200><br>
 
 ## Required
 - [x] User can create a card and still see their created card when the app is relaunched.
